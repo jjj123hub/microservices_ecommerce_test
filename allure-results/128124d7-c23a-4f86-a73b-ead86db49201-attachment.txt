@@ -1,0 +1,1 @@
+D:/projects/microservices_ecommerce_test/venv/Lib/site-packages/pact/lib/ruby/lib/ruby/site_ruby/3.2.0/ruby_installer/runtime/msys2_installation.rb:97: warning: failed to load encoding (CP936); use ASCII-8BIT instead

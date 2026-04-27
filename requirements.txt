@@ -1,0 +1,10 @@
+pytest>=7.4.0
+playwright>=1.40.0
+pytest-playwright>=0.4.3
+allure-pytest>=2.13.0
+pact-python>=1.0.0
+requests>=2.31.0
+pymysql>=1.1.0
+faker>=19.0.0
+redis>=5.0.0
+locust>=2.18.0

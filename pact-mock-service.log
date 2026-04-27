@@ -1,0 +1,50 @@
+I, [2026-04-26T12:03:25.286534 #24872]  INFO -- : Cleared interactions
+I, [2026-04-26T12:03:25.410832 #24872]  INFO -- : Registered expected interaction GET /users/123
+D, [2026-04-26T12:03:25.449897 #24872] DEBUG -- : {
+  "description": "a request for user 123",
+  "providerState": "a user with id 123 exists",
+  "request": {
+    "method": "GET",
+    "path": "/users/123"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "username": "testuser",
+      "email": "test@example.com",
+      "id": 123
+    }
+  },
+  "metadata": null
+}
+I, [2026-04-26T12:03:25.554141 #24872]  INFO -- : Received request GET /users/123
+D, [2026-04-26T12:03:25.614230 #24872] DEBUG -- : {
+  "path": "/users/123",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:1234",
+    "User-Agent": "python-requests/2.32.5",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2026-04-26T12:03:25.661115 #24872]  INFO -- : Found matching response for GET /users/123
+D, [2026-04-26T12:03:25.689394 #24872] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "username": "testuser",
+    "email": "test@example.com",
+    "id": 123
+  }
+}
+I, [2026-04-26T12:03:25.751249 #24872]  INFO -- : Verifying - interactions matched
+I, [2026-04-26T12:03:25.848951 #24872]  INFO -- : Writing pact for UserService to D:/projects/microservices_ecommerce_test/pacts/ecommerceconsumer-userservice.json

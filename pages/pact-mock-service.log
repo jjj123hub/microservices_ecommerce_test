@@ -1,0 +1,244 @@
+I, [2026-04-06T21:15:19.458492 #34464]  INFO -- : Received request GET /api/test
+D, [2026-04-06T21:15:19.483322 #34464] DEBUG -- : {
+  "path": "/api/test",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:1234",
+    "User-Agent": "python-requests/2.32.5",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+E, [2026-04-06T21:15:19.507500 #34464] ERROR -- : No matching interaction found for GET /api/test
+E, [2026-04-06T21:15:19.531850 #34464] ERROR -- : Interaction diffs for that route:
+E, [2026-04-06T21:15:19.557402 #34464] ERROR -- : 
+I, [2026-04-06T21:16:49.506267 #34464]  INFO -- : Cleared interactions
+I, [2026-04-06T21:16:49.618188 #34464]  INFO -- : Received request GET /api/test
+D, [2026-04-06T21:16:49.647325 #34464] DEBUG -- : {
+  "path": "/api/test",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:1234",
+    "User-Agent": "python-requests/2.32.5",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+E, [2026-04-06T21:16:49.676702 #34464] ERROR -- : No matching interaction found for GET /api/test
+E, [2026-04-06T21:16:49.705784 #34464] ERROR -- : Interaction diffs for that route:
+E, [2026-04-06T21:16:49.735928 #34464] ERROR -- : 
+W, [2026-04-06T21:16:49.806599 #34464]  WARN -- : Verifying - actual interactions do not match expected interactions. 
+Unexpected requests:
+	GET /api/test
+
+
+
+W, [2026-04-06T21:16:49.843932 #34464]  WARN -- : Unexpected requests:
+	GET /api/test
+
+
+
+I, [2026-04-06T21:19:35.209258 #34464]  INFO -- : Cleared interactions
+I, [2026-04-06T21:19:35.273845 #34464]  INFO -- : Registered expected interaction GET /api/test
+D, [2026-04-06T21:19:35.301244 #34464] DEBUG -- : {
+  "description": "get test data",
+  "providerState": "test service",
+  "request": {
+    "method": "get",
+    "path": "/api/test"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+    },
+    "body": {
+      "code": 200,
+      "msg": "success",
+      "data": "pact_success"
+    }
+  },
+  "metadata": null
+}
+I, [2026-04-06T21:19:35.369795 #34464]  INFO -- : Received request GET /api/test
+D, [2026-04-06T21:19:35.396963 #34464] DEBUG -- : {
+  "path": "/api/test",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:1234",
+    "User-Agent": "python-requests/2.32.5",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2026-04-06T21:19:35.424850 #34464]  INFO -- : Found matching response for GET /api/test
+D, [2026-04-06T21:19:35.451455 #34464] DEBUG -- : {
+  "status": 200,
+  "headers": {
+  },
+  "body": {
+    "code": 200,
+    "msg": "success",
+    "data": "pact_success"
+  }
+}
+I, [2026-04-06T21:19:35.512788 #34464]  INFO -- : Verifying - interactions matched
+I, [2026-04-06T21:19:35.592684 #34464]  INFO -- : Writing pact for API_Provider to ./pacts/ui_consumer-api_provider.json
+I, [2026-04-06T21:44:04.982142 #34464]  INFO -- : Cleared interactions
+I, [2026-04-06T21:44:05.104537 #34464]  INFO -- : Registered expected interaction GET /users/123
+D, [2026-04-06T21:44:05.157084 #34464] DEBUG -- : {
+  "description": "a request for user 123",
+  "providerState": "a user with id 123 exists",
+  "request": {
+    "method": "GET",
+    "path": "/users/123"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "username": "testuser",
+      "email": "test@example.com",
+      "id": 123
+    }
+  },
+  "metadata": null
+}
+I, [2026-04-06T21:44:05.262344 #34464]  INFO -- : Received request GET /users/123
+D, [2026-04-06T21:44:05.311253 #34464] DEBUG -- : {
+  "path": "/users/123",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:1234",
+    "User-Agent": "python-requests/2.32.5",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2026-04-06T21:44:05.362981 #34464]  INFO -- : Found matching response for GET /users/123
+D, [2026-04-06T21:44:05.411375 #34464] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "username": "testuser",
+    "email": "test@example.com",
+    "id": 123
+  }
+}
+I, [2026-04-06T21:44:05.518214 #34464]  INFO -- : Verifying - interactions matched
+I, [2026-04-06T21:44:05.641176 #34464]  INFO -- : Writing pact for API_Provider to ./pacts/ui_consumer-api_provider.json
+I, [2026-04-06T21:48:19.999193 #34464]  INFO -- : Cleared interactions
+I, [2026-04-06T21:48:20.158079 #34464]  INFO -- : Registered expected interaction GET /users/123
+D, [2026-04-06T21:48:20.209610 #34464] DEBUG -- : {
+  "description": "a request for user 123",
+  "providerState": "a user with id 123 exists",
+  "request": {
+    "method": "GET",
+    "path": "/users/123"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "username": "testuser",
+      "email": "test@example.com",
+      "id": 123
+    }
+  },
+  "metadata": null
+}
+I, [2026-04-06T21:48:20.329795 #34464]  INFO -- : Received request GET /users/123
+D, [2026-04-06T21:48:20.373410 #34464] DEBUG -- : {
+  "path": "/users/123",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:1234",
+    "User-Agent": "python-requests/2.32.5",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2026-04-06T21:48:20.418456 #34464]  INFO -- : Found matching response for GET /users/123
+D, [2026-04-06T21:48:20.469528 #34464] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "username": "testuser",
+    "email": "test@example.com",
+    "id": 123
+  }
+}
+I, [2026-04-06T21:48:20.579082 #34464]  INFO -- : Verifying - interactions matched
+I, [2026-04-06T21:48:20.692017 #34464]  INFO -- : Writing pact for API_Provider to ./pacts/ui_consumer-api_provider.json
+I, [2026-04-06T21:52:43.542060 #34464]  INFO -- : Cleared interactions
+I, [2026-04-06T21:52:43.653181 #34464]  INFO -- : Registered expected interaction GET /users/123
+D, [2026-04-06T21:52:43.707200 #34464] DEBUG -- : {
+  "description": "a request for user 123",
+  "providerState": "a user with id 123 exists",
+  "request": {
+    "method": "GET",
+    "path": "/users/123"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "username": "testuser",
+      "email": "test@example.com",
+      "id": 123
+    }
+  },
+  "metadata": null
+}
+I, [2026-04-06T21:52:43.822919 #34464]  INFO -- : Received request GET /users/123
+D, [2026-04-06T21:52:43.859675 #34464] DEBUG -- : {
+  "path": "/users/123",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:1234",
+    "User-Agent": "python-requests/2.32.5",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2026-04-06T21:52:43.898839 #34464]  INFO -- : Found matching response for GET /users/123
+D, [2026-04-06T21:52:43.939894 #34464] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "username": "testuser",
+    "email": "test@example.com",
+    "id": 123
+  }
+}
+I, [2026-04-06T21:52:44.041793 #34464]  INFO -- : Verifying - interactions matched
+I, [2026-04-06T21:52:44.136541 #34464]  INFO -- : Writing pact for API_Provider to ./pacts/ui_consumer-api_provider.json

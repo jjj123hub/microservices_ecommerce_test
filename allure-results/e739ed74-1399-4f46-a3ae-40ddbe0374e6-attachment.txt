@@ -1,0 +1,1 @@
+D:\projects\microservices_ecommerce_test\venv\Lib\site-packages\pact\lib\ruby\bin\..\bin.real\ruby.exe: warning: failed to load encoding (CP936); use ASCII-8BIT instead

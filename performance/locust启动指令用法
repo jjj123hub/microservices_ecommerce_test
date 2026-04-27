@@ -1,0 +1,2 @@
+locustfile.py 不是可执行程序，它是给 locust 工具读取的，脚本必须用 locust 命令启动：
+例如：locust -f performance/locustfile.py --host=https://www.saucedemo.com

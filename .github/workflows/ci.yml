@@ -1,0 +1,86 @@
+name: 电商项目自动化测试 CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: jlf341124  # 已改成你的真实密码
+          MYSQL_DATABASE: ecommerce
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=5s
+          --health-timeout=2s
+          --health-retries=5
+
+      redis:
+        image: redis:6
+        ports:
+          - 6379:6379
+
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 3.9
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+
+      - name: 安装项目依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pymysql redis cryptography
+
+      - name: 等待 MySQL 服务启动
+        run: sleep 20
+
+      - name: 自动创建数据库表
+        run: |
+          mysql -h 127.0.0.1 -u root -pjlf341124 ecommerce << EOF
+          CREATE TABLE users (
+              id INT PRIMARY KEY AUTO_INCREMENT,
+              username VARCHAR(50) NOT NULL,
+              password VARCHAR(100) NOT NULL,
+              create_time DATETIME DEFAULT CURRENT_TIMESTAMP
+          );
+          CREATE TABLE products (
+              id INT PRIMARY KEY AUTO_INCREMENT,
+              name VARCHAR(100) NOT NULL,
+              price DECIMAL(10,2) NOT NULL,
+              stock INT DEFAULT 0
+          );
+          CREATE TABLE orders (
+              id INT PRIMARY KEY AUTO_INCREMENT,
+              user_id INT NOT NULL,
+              order_no VARCHAR(50) NOT NULL,
+              total_price DECIMAL(10,2),
+              status VARCHAR(20) DEFAULT 'PENDING'
+          );
+          CREATE TABLE order_items (
+              id INT PRIMARY KEY AUTO_INCREMENT,
+              order_id INT NOT NULL,
+              product_id INT NOT NULL,
+              quantity INT,
+              price DECIMAL(10,2)
+          );
+          INSERT INTO users (username,password) VALUES ('testuser','123456');
+          INSERT INTO products (name,price,stock) VALUES ('iPhone',5999,100);
+          INSERT INTO orders (user_id,order_no,total_price) VALUES (1,'ORDER123',5999);
+          INSERT INTO order_items (order_id,product_id,quantity,price) VALUES (1,1,1,5999);
+          EOF
+
+      - name: 运行自动化测试
+        run: |
+          pytest tests/ -v

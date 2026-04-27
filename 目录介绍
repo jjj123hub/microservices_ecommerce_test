@@ -1,0 +1,22 @@
+microservices_ecommerce_test/
+├── config/              # 全局配置中心
+│   └── settings.py      # 系统配置、页面定位器（元素定位）等
+├── pages/               # 页面对象模型（POM）封装
+│   ├── base_page.py     # 页面基类（封装通用操作：点击、输入、等待等）
+│   ├── login_page.py    # 登录页专属操作封装
+│   ├── product_page.py  # 商品页专属操作封装
+│   └── checkout_page.py # 结账页（核心交易流程）专属操作封装
+├── utils/               # 通用工具类
+│   ├── redis_helper.py  # Redis操作/热点Key检测/优化工具
+│   └── db_helper.py     # MySQL数据库操作工具（查/改/连等）
+├── tests/               # 测试用例集
+│   ├── test_login.py    # 登录功能UI自动化测试
+│   ├── test_purchase.py # 商品购买全流程UI自动化测试
+│   ├── test_redis.py    # Redis缓存功能/热点Key优化验证测试
+│   └── test_pact.py     # API契约测试（消费者-提供者契约验证）
+├── performance/         # 性能测试脚本
+│   ├── locustfile.py    # Locust性能测试脚本（Python编写）
+│   └── k6_script.js     # k6性能测试脚本（JS编写，高并发更友好）
+├── conftest.py          # pytest全局配置（夹具、钩子函数等）
+├── requirements.txt     # 项目依赖包清单（一键安装所有依赖）
+└── README.md            # 项目说明文档

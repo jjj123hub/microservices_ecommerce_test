@@ -1,0 +1,5 @@
+k6 不是 Python 库
+k6 不是 pip 包
+k6 是一个独立软件（Go 语言写的压测工具）
+装完后，直接在 PyCharm 终端运行！
+k6 run performance/k6_script.js

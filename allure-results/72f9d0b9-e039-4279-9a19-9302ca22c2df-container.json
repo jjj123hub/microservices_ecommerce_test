@@ -1,0 +1,1 @@
+{"uuid": "c0b9ff95-80a4-4f8e-b407-400c982ca0df", "children": ["ae26e736-8d78-41e8-b702-9c9087e1699e"], "befores": [{"name": "pact_consumer", "status": "passed", "start": 1775483562023, "stop": 1775483563518}], "afters": [{"name": "pact_consumer::0", "status": "passed", "start": 1775483564347, "stop": 1775483564494}], "start": 1775483562023, "stop": 1775483564494}

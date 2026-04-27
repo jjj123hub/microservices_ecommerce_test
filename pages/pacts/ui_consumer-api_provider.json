@@ -1,0 +1,52 @@
+{
+  "consumer": {
+    "name": "UI_Consumer"
+  },
+  "provider": {
+    "name": "API_Provider"
+  },
+  "interactions": [
+    {
+      "description": "get test data",
+      "providerState": "test service",
+      "request": {
+        "method": "get",
+        "path": "/api/test"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "code": 200,
+          "msg": "success",
+          "data": "pact_success"
+        }
+      }
+    },
+    {
+      "description": "a request for user 123",
+      "providerState": "a user with id 123 exists",
+      "request": {
+        "method": "GET",
+        "path": "/users/123"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "username": "testuser",
+          "email": "test@example.com",
+          "id": 123
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
