@@ -14,7 +14,7 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: jlf341124  # 已改成你的真实密码
+          MYSQL_ROOT_PASSWORD: jlf341124
           MYSQL_DATABASE: ecommerce
         ports:
           - 3306:3306
@@ -38,13 +38,14 @@ jobs:
         with:
           python-version: "3.9"
 
-      - name: 安装项目依赖
+      - name: 安装项目依赖 + Playwright
         run: |
           python -m pip install --upgrade pip
-          pip install pytest pymysql redis cryptography
+          pip install pytest pymysql redis cryptography playwright
+          playwright install --with-deps chromium
 
       - name: 等待 MySQL 服务启动
-        run: sleep 20
+        run: sleep 30
 
       - name: 自动创建数据库表
         run: |
