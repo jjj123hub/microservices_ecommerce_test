@@ -6,7 +6,7 @@ from playwright.sync_api import sync_playwright
 def page():
     with sync_playwright() as p:
         # 关键配置：headless=False（显示浏览器）、slow_mo=500（步骤延迟500ms）
-        browser = p.chromium.launch(headless=False, slow_mo=500)
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context()
         page = context.new_page()
         yield page  # 提供page对象给其他夹具（如login_page）
