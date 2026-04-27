@@ -9,7 +9,7 @@ class Config:
     ORDER_SERVICE_URL = "http://localhost:8002"
     PRODUCT_SERVICE_URL = "http://localhost:8003"
     
-    DB_HOST = "localhost"
+    DB_HOST = "127.0.0.1"
     DB_PORT = 3306
     DB_USER = "root"
     DB_PASSWORD = "jlf341124"
